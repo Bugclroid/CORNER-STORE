@@ -5,6 +5,7 @@ import './config/db.js';
 import authRoutes from './routes/authRoutes.js'
 import storeRoutes from './routes/storeRoutes.js';
 import productRoutes from './routes/productRoutes.js';
+import adminRoutes from './routes/adminRoutes.js';
 
 dotenv.config();
 
@@ -17,6 +18,8 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/stores', storeRoutes);
 app.use('/api/products', productRoutes);
+app.use('/api/admin', adminRoutes);
+
 
 app.get('/', (req, res) => {
     res.send('Corner Store API is running... 🚀');
